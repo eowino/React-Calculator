@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Header from "../Header/Header";
 import Screen from "../Screen/Screen";
 import Body from "../Body/Body";
+import Footer from "../Footer/Footer";
 
 class Calculator extends Component {
   render() {
@@ -13,6 +14,7 @@ class Calculator extends Component {
           <Screen />
           <Body />
         </div>
+        <Footer />
       </div>
     );
   }
