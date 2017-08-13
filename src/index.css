@@ -72,3 +72,20 @@ h1 {
 footer {
   text-align: center;
 }
+
+.calculator-user-input,
+.calculator-answer {
+  text-align: right;
+  padding-right: 16px;
+  padding-top: 32px;
+}
+
+.calculator-answer {
+  color: #000;
+  font-size: 3.5em;
+}
+
+.calculator-user-input {
+  color: #999;
+  font-size: 2.5em;
+}

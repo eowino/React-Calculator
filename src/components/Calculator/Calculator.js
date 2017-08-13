@@ -11,7 +11,7 @@ class Calculator extends Component {
       <div>
         <Header title="Basic Calculator" />
         <div className="calculator">
-          <Screen />
+          <Screen equation={ "1 + 2" } answer={ 3 }/>
           <Body />
         </div>
         <Footer />
