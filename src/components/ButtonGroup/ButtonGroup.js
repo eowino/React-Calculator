@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Button = props => {
   return (
-    <button type="button">
+    <button type="button" onClick={props.click}>
       {props.value}
     </button>
   );
@@ -11,7 +11,7 @@ const Button = props => {
 
 const ButtonGroup = props => {
   let buttons = props.buttons.map(value =>
-    <Button value={value} key={value} />
+    <Button value={value} key={value} click={() => props.click(value)} />
   );
   return (
     <div>

@@ -4,15 +4,36 @@ import Header from "../Header/Header";
 import Screen from "../Screen/Screen";
 import Body from "../Body/Body";
 import Footer from "../Footer/Footer";
+import CalculatorReducer from './CalculatorReducer';
 
 class Calculator extends Component {
+  state = {
+    equation: "",
+    answer: "",
+    value: 0
+  };
+
+  constructor() {
+    super();
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(value) {
+    let eq = this.state.equation;
+    this.setState(() => {
+      return {
+        equation: `${eq} ${value}`
+      };
+    });
+  }
+
   render() {
     return (
       <div>
-        <Header title="Basic Calculator" />
+        <Header title="Calculator" />
         <div className="calculator">
-          <Screen equation={ "1 + 2" } answer={ 3 }/>
-          <Body />
+          <Screen equation={this.state.equation} answer={this.state.answer} />
+          <Body click={this.handleClick}/>
         </div>
         <Footer />
       </div>

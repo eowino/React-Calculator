@@ -4,15 +4,15 @@ import ButtonGroup from "../ButtonGroup/ButtonGroup";
 
 const Body = props => {
   const buttons = [7, 8, 9, 4, 5, 6, 1, 2, 3, ".", 0, "="];
-  const operators = ["DEL", "÷", "x", "-", "+"];
+  const operators = ["C", "DEL", "÷", "x", "-", "+"];
 
   return (
     <div className="calculator-body">
       <div className="calculator-side-menu">
-        <ButtonGroup buttons={operators} />
+        <ButtonGroup buttons={operators} click={props.click} />
       </div>
       <div className="calculator-main">
-        <ButtonGroup buttons={buttons} />
+        <ButtonGroup buttons={buttons} click={props.click} />
       </div>
     </div>
   );
