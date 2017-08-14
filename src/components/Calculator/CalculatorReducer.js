@@ -1,3 +1,5 @@
+import INVALID_EXPRESSION from '../../errors/errors';
+
 const operators = ["+", "/", "-", "*"];
 const hasItem = (arr, item) => arr.indexOf(item) !== -1;
 
@@ -23,11 +25,28 @@ const CalculatorReducer = (state, value) => {
     };
   }
 
+  // Dot operator is selected
+  if (state.equation.length >= 1 && value === ".") {
+    // If the last operator selected is the dot operator - do nothing
+    if (lastItem === ".") {
+      return {
+        ...state
+      };
+    }
+    return {
+      ...state,
+      equation: state.equation + ".",
+      value
+    };
+  }
+
   // Clear "C" operator is selected
   if (value === "C") {
     return {
       ...state,
       equation: "",
+      answer: "",
+      error: "",
       value
     };
   }
@@ -57,8 +76,25 @@ const CalculatorReducer = (state, value) => {
     };
   }
 
+  // Equal operator is selected
+  if (value === "=" && state.equation.length >= 1) {
+    let answer = "";
+    let error = "";
+    try {
+        answer = eval(state.equation)
+    } catch (err) {
+        error = INVALID_EXPRESSION;
+    }
+    
+    return {
+      ...state,
+      answer,
+      error
+    };
+  }
+
   return {
-    state,
+    ...state,
     value
   };
 };

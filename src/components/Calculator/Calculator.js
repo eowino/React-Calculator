@@ -10,7 +10,8 @@ class Calculator extends Component {
   state = {
     equation: "",
     answer: "",
-    value: 0
+    value: 0,
+    error: ""
   };
 
   constructor() {
@@ -29,7 +30,7 @@ class Calculator extends Component {
       <div>
         <Header title="Calculator" />
         <div className="calculator">
-          <Screen equation={this.state.equation} answer={this.state.answer} />
+          <Screen equation={this.state.equation} answer={this.state.answer} error={this.state.error}/>
           <Body click={this.handleClick}/>
         </div>
         <Footer />
