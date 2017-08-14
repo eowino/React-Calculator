@@ -81,6 +81,7 @@ const CalculatorReducer = (state, value) => {
     let answer = "";
     let error = "";
     try {
+        // eslint-disable-next-line
         answer = eval(state.equation)
     } catch (err) {
         error = INVALID_EXPRESSION;
