@@ -60,6 +60,14 @@ describe("Calculator Reducer", () => {
     });
   });
 
+  describe("when C button is selected", () => {
+    it("should clear the equation", () => {
+      state.equation = "1+2+3-4";
+      let newState = CalculatorReducer(state, "C");
+      expect(newState.equation).toBe("");
+    });
+  });
+
   describe("when the divide, add, minus, or multiply button is selected", () => {
     describe("given the last item in the equation is a number", () => {
       it("should add the divide sign to the equation", () => {
