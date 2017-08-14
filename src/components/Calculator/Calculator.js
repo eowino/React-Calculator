@@ -19,11 +19,8 @@ class Calculator extends Component {
   }
 
   handleClick(value) {
-    let eq = this.state.equation;
     this.setState(() => {
-      return {
-        equation: `${eq} ${value}`
-      };
+      return CalculatorReducer(this.state, value);
     });
   }
 

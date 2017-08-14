@@ -4,7 +4,7 @@ import ButtonGroup from "../ButtonGroup/ButtonGroup";
 
 const Body = props => {
   const buttons = [7, 8, 9, 4, 5, 6, 1, 2, 3, ".", 0, "="];
-  const operators = ["C", "DEL", "÷", "x", "-", "+"];
+  const operators = ["C", "DEL", "/", "*", "-", "+"];
 
   return (
     <div className="calculator-body">
