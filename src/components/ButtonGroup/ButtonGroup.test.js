@@ -1,6 +1,8 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
+
 import ButtonGroup from "./ButtonGroup";
+import { mainButtons } from '../Body/button-data';
 
 describe("ButtonGroup Component", () => {
   it("should render without throwing an error", () => {
@@ -10,9 +12,8 @@ describe("ButtonGroup Component", () => {
 
   describe("given an array of buttons", () => {
     it("should render the Button component with the array values", () => {
-      const buttons = [1, 2, 3, 4, 5];
-      const wrapper = mount(<ButtonGroup buttons={buttons} />);
-      expect(wrapper.find("Button")).toHaveLength(buttons.length);
+      const wrapper = mount(<ButtonGroup buttons={mainButtons} />);
+      expect(wrapper.find("Button")).toHaveLength(mainButtons.length);
     });
   });
 });

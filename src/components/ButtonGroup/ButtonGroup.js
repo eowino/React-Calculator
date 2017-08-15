@@ -11,7 +11,7 @@ const Button = props => {
 
 const ButtonGroup = ({ click, buttons = [] }) => {
   let btns = buttons.map(value =>
-    <Button value={value} id={value} key={value} click={() => click(value)} />
+    <Button value={value.val} id={value.id} key={value.val} click={() => click(value.val)} />
   );
   return (
     <div>
