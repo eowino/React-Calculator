@@ -3,19 +3,19 @@ import PropTypes from "prop-types";
 
 const Button = props => {
   return (
-    <button type="button" onClick={props.click}>
+    <button type="button" id={props.id} onClick={props.click}>
       {props.value}
     </button>
   );
 };
 
-const ButtonGroup = props => {
-  let buttons = props.buttons.map(value =>
-    <Button value={value} key={value} click={() => props.click(value)} />
+const ButtonGroup = ({ click, buttons = [] }) => {
+  let btns = buttons.map(value =>
+    <Button value={value} id={value} key={value} click={() => click(value)} />
   );
   return (
     <div>
-      {buttons}
+      {btns}
     </div>
   );
 };
