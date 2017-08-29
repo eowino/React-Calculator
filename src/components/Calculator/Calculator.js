@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import Header from "../Header/Header";
 import Screen from "../Screen/Screen";
 import Body from "../Body/Body";
 import Footer from "../Footer/Footer";
@@ -8,7 +7,7 @@ import CalculatorReducer from './CalculatorReducer';
 
 class Calculator extends Component {
   state = {
-    equation: "",
+    equation: "2",
     answer: "",
     value: 0,
     error: ""
@@ -28,7 +27,6 @@ class Calculator extends Component {
   render() {
     return (
       <div>
-        <Header title="Calculator" />
         <div className="calculator">
           <Screen equation={this.state.equation} answer={this.state.answer} error={this.state.error}/>
           <Body click={this.handleClick}/>
